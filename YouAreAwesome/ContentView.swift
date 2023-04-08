@@ -9,36 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString = "When Genius Bar needs help, They call you !"
+    @State private var messageString = "Namaste"
     
     var body: some View {
         
         
-        GeometryReader {geometry in
-            VStack {
+       VStack {
                     
-                
-                    
+            
                     Spacer()
+           
+           Image(systemName: "figure.mind.and.body"
+            ).resizable().scaledToFit()
+            .foregroundColor(.pink)
                     
                     Text(messageString)
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .minimumScaleFactor(0.5)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.red)
+                        .foregroundColor(.pink)
                         .frame(height: 150)
                         .frame(maxWidth:.infinity)
                        // .border(.orange, width: 1)
                         .padding()
                     
                     Spacer()
-                    
-                    Divider().background(.black).padding().frame(width: 150.0)
-                    
-                    Rectangle()
-                        .fill(.indigo)
-                        .frame(width:geometry.size.width*(2/3), height:1)
+                  
                     
                     HStack{
                         Button("Awesome") {
@@ -55,13 +52,13 @@ struct ContentView: View {
                         }
                         .buttonStyle(.borderedProminent)
                     }
-                    //.border(.purple, width: 5)
+                   
                     .padding()
                     
             }
         }
         }
-    }
+
 
 
 struct ContentView_Previews: PreviewProvider {

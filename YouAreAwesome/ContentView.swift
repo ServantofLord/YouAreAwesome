@@ -19,9 +19,10 @@ struct ContentView: View {
             
                     Spacer()
            
-           Image(systemName: "figure.mind.and.body"
+           Image(systemName: "cloud.sun.rain.fill"
             ).resizable().scaledToFit()
-            .foregroundColor(.pink)
+               .symbolRenderingMode(.multicolor).padding().background(Color(hue: 0.53, saturation: 0.348, brightness: 0.948)).cornerRadius(30).shadow(color:.gray, radius: 30, x:20, y:20).overlay(RoundedRectangle(cornerRadius: 30).stroke(.teal,lineWidth: 1))
+               .padding()
                     
                     Text(messageString)
                         .font(.largeTitle)
@@ -31,7 +32,6 @@ struct ContentView: View {
                         .foregroundColor(.pink)
                         .frame(height: 150)
                         .frame(maxWidth:.infinity)
-                       // .border(.orange, width: 1)
                         .padding()
                     
                     Spacer()

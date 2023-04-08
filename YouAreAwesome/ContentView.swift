@@ -9,55 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString = "Namaste"
+    @State private var messageString = ""
     
     var body: some View {
         
         
-       VStack {
-                    
+        VStack {
             
-                    Spacer()
-           
-           Image(systemName: "cloud.sun.rain.fill"
-            ).resizable().scaledToFit()
-               .symbolRenderingMode(.multicolor).padding().background(Color(hue: 0.53, saturation: 0.348, brightness: 0.948)).cornerRadius(30).shadow(color:.gray, radius: 30, x:20, y:20).overlay(RoundedRectangle(cornerRadius: 30).stroke(.teal,lineWidth: 1))
-               .padding()
+            
+            Spacer()
+            
+            
+            Text(messageString)
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.pink)
+                .frame(height: 150)
+                .frame(maxWidth:.infinity)
+                .padding()
+            
+            Spacer()
+            
+            
+            
+            Button("Show Message") {
+                let message1 = "You Are Awesome!"
+                let message2 = "You Are Great!"
+                if messageString == message1 {
+                    messageString = message2
                     
-                    Text(messageString)
-                        .font(.largeTitle)
-                        .fontWeight(.heavy)
-                        .minimumScaleFactor(0.5)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.pink)
-                        .frame(height: 150)
-                        .frame(maxWidth:.infinity)
-                        .padding()
+                } else {
                     
-                    Spacer()
-                  
-                    
-                    HStack{
-                        Button("Awesome") {
-                            messageString = "You Are Awesome!"
-                            
-                        }
-                        .buttonStyle(.borderedProminent)
-                        
-                        Spacer()
-                        
-                        Button("Great") {
-                            messageString = "You Are Great!"
-                            
-                        }
-                        .buttonStyle(.borderedProminent)
-                    }
-                   
-                    .padding()
-                    
+                    messageString = message1
+                }
             }
+            .buttonStyle(.borderedProminent)
+            
+            
+            
+            
+            .padding()
+            
         }
-        }
+    }
+}
 
 
 
